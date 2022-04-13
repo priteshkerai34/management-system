@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('categories', App\Http\Controllers\API\categoryAPIController::class);
+
+
+Route::resource('items', App\Http\Controllers\API\itemsAPIController::class);
+
+
+Route::resource('tax_categories', App\Http\Controllers\API\tax_categoryAPIController::class);
+
+

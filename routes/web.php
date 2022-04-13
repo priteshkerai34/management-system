@@ -20,3 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('categories', App\Http\Controllers\categoryController::class);
+
+
+Route::resource('items', App\Http\Controllers\itemsController::class);
+
+
+Route::resource('taxCategories', App\Http\Controllers\tax_categoryController::class);
+
+
