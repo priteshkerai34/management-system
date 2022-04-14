@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 /**
  * Class tax_category
@@ -16,8 +18,14 @@ class tax_category extends Model
 
     public $table = 'tax_categories';
     
+    use LogsActivity;
 
     public $fillable = [
+        'name',
+        'tax_rate'
+    ];
+
+    protected static $logAttributes = [
         'name',
         'tax_rate'
     ];
@@ -40,6 +48,11 @@ class tax_category extends Model
         'name' => 'required',
         'tax_rate' => 'required'
     ];
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults();
+    }
 
     
 }

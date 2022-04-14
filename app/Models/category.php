@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 /**
  * Class category
@@ -15,8 +17,13 @@ class category extends Model
 {
     public $table = 'categories';
     
+    use LogsActivity;
 
     public $fillable = [
+        'Name'
+    ];
+
+    protected static $logAttributes = [
         'Name'
     ];
 
@@ -38,5 +45,9 @@ class category extends Model
         'Name' => 'required'
     ];
 
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults();
+    }
     
 }

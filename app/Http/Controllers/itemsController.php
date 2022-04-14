@@ -8,11 +8,12 @@ use App\Repositories\itemsRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Models\category;
 use App\Models\item_images;
+use App\Models\itemactivity;
 use App\Models\tax_category;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-use Intervention\Image\Facades\Image;
+use Illuminate\Support\Carbon;
 
 class itemsController extends AppBaseController
 {
@@ -107,13 +108,16 @@ class itemsController extends AppBaseController
     {
         $items = $this->itemsRepository->find($id);
 
+        $category = category::pluck('name','id');
+        $tax_category = tax_category::pluck('name','id');
+
         if (empty($items)) {
             Flash::error('Items not found');
 
             return redirect(route('items.index'));
         }
 
-        return view('items.edit')->with('items', $items);
+        return view('items.edit',compact('category','tax_category'))->with('items', $items);
     }
 
     /**

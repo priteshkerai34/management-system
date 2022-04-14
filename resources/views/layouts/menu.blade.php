@@ -22,4 +22,11 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('history.index') }}"
+       class="nav-link {{ Request::is('history*') ? 'active' : '' }}">
+        <p>History</p>
+    </a>
+</li>
+
 

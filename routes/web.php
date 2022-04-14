@@ -31,3 +31,6 @@ Route::resource('items', App\Http\Controllers\itemsController::class);
 Route::resource('taxCategories', App\Http\Controllers\tax_categoryController::class);
 
 
+Route::resource('history', App\Http\Controllers\activityController::class);
+
+
