@@ -43,7 +43,7 @@
 <!-- Item Tax Category Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('item_visibility', 'Item Visibility:') !!}
-    {!! Form::select('item_visibility', [1=>'Yes',2=>'No'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('item_visibility', ['Yes'=>'Yes','No'=>'No'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Image Field -->

@@ -66,7 +66,7 @@ class items extends Model
         'current_price' => 'string',
         'Regular_price' => 'string',
         'available_stock' => 'integer',
-        'item_visibility' => 'boolean',
+        'item_visibility' => 'string',
         'item_tax_category' => 'string',
         'category' => 'string'
     ];

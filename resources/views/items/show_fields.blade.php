@@ -15,6 +15,14 @@
 <div class="card-body">
 
     <div class="form-group row">
+        <label class="col-sm-2">Category:</label>
+        <div class="col-sm-1">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="col-sm-8">{{ $items->category }}</div>
+    </div>
+
+    <div class="form-group row">
         <label class="col-sm-2">Name:</label>
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
@@ -68,7 +76,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ (($items->item_visibility) ? 'Yes' : 'NO')  }}</div>
+        <div class="col-sm-8">{{ $items->item_visibility }}</div>
     </div>
 
     <div class="form-group row">
@@ -76,7 +84,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $items->tax_category->name }}</div>
+        <div class="col-sm-8">{{ $items->item_tax_category }}</div>
     </div>
 
     <div class="form-group row">

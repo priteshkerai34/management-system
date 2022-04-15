@@ -26,6 +26,13 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected static $logAttributes = [
+        'name',
+        'email',
+        'password'
+    ];
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -47,8 +54,6 @@ class User extends Authenticatable
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-        ->logOnly(['name', 'text']);
-        // Chain fluent methods for configuration options
+        return LogOptions::defaults();
     }
 }

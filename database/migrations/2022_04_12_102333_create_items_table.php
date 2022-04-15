@@ -22,12 +22,10 @@ class CreateItemsTable extends Migration
             $table->decimal('Regular_price',10,2);
             $table->integer('available_stock');
             $table->longtext('description')->nullable();
-            $table->boolean('item_visibility');
-            $table->unsignedbiginteger('category');
-            $table->unsignedbiginteger('item_tax_category');
+            $table->string('item_visibility');
+            $table->string('category');
+            $table->string('item_tax_category');
             $table->timestamps();
-            $table->foreign('category')->references('id')->on('categories');
-            $table->foreign('item_tax_category')->references('id')->on('tax_categories');
         });
     }
 

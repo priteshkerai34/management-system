@@ -20,8 +20,8 @@
                 <td>{{ $items->current_price }}</td>
                 <td>{{ $items->Regular_price }}</td>
                 <td>{{ $items->available_stock }}</td>
-                <td>{{ (($items->item_visibility) ? 'Yes' : 'NO') }}</td>
-                <td>{{ $items->tax_category->name }}</td>
+                <td>{{ $items->item_visibility }}</td>
+                <td>{{ $items->item_tax_category  }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['items.destroy', $items->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

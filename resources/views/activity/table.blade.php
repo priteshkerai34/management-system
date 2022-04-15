@@ -16,7 +16,7 @@
                 <td>{{ $activity->subject_type }}</td>
                 <td>{{ $activity->subject_id }}</td>
                 <td>{{ $activity->causer_id }}</td>
-                <td>{{ $activity->properties }}</td>
+                <td>{{ $activity->properties}}</td>        
             </tr>
             @endforeach
         </tbody>

@@ -14,7 +14,7 @@ class activityController extends Controller
      */
     public function index()
     {
-        $activity =  activity::get();
+        $activity = activity::get();
 
         return view('activity.index')
             ->with('activity', $activity);
