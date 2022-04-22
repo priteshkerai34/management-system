@@ -32,3 +32,4 @@ Route::resource('taxCategories', App\Http\Controllers\tax_categoryController::cl
 Route::resource('history', App\Http\Controllers\activityController::class);
 
 
+Route::resource('profiles', App\Http\Controllers\profileController::class);

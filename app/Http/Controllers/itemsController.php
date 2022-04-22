@@ -47,9 +47,9 @@ class itemsController extends AppBaseController
      */
     public function create()
     {
-        $category = category::pluck('name','name');
-        $tax_category = tax_category::pluck('name','name');
-        return view('items.create', compact('category','tax_category'));
+        $category = category::select('id','name')->get();
+        $tax_category = tax_category::select('id','name','tax_rate')->get();
+        return view('items.create', compact('category', 'tax_category'));
     }
 
     /**
@@ -65,13 +65,15 @@ class itemsController extends AppBaseController
 
         $items = $this->itemsRepository->create($input);
 
-        foreach($input['images'] as $images) {
-            $image = new item_images;
-            $image->images = $images;
-            $image->item_id = $items->id;
-            $image->save();
+        if ($input['images'][0]!=null) {
+            foreach ($input['images'] as $images) {
+                $image = new item_images;
+                $image->images = $images;
+                $image->item_id = $items->id;
+                $image->save();
+            }
         }
-        
+
         Flash::success('Items saved successfully.');
 
         return redirect(route('items.index'));
@@ -108,8 +110,8 @@ class itemsController extends AppBaseController
     {
         $items = $this->itemsRepository->find($id);
 
-        $category = category::pluck('name','name');
-        $tax_category = tax_category::pluck('name','name');
+        $category = category::select('id','name')->get();
+        $tax_category = tax_category::select('id','name','tax_rate')->get();
 
         if (empty($items)) {
             Flash::error('Items not found');
@@ -117,7 +119,7 @@ class itemsController extends AppBaseController
             return redirect(route('items.index'));
         }
 
-        return view('items.edit',compact('category','tax_category'))->with('items', $items);
+        return view('items.edit', compact('category', 'tax_category'))->with('items', $items);
     }
 
     /**

@@ -1,7 +1,11 @@
 <!-- Category Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('category', 'Category:') !!}
-    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}
+    <select class="form-control" id="category" name="category">
+        @foreach($category as $category)
+        <option value="{{ $category }}">{{ $category }}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Name Field -->
@@ -37,7 +41,11 @@
 <!-- Item Tax Category Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('item_tax_category', 'Item Tax Category:') !!}
-    {!! Form::select('item_tax_category', $tax_category, null, ['class' => 'form-control']) !!}
+    <select class="form-control" id="item_tax_category" name="item_tax_category">
+        @foreach($tax_category as $tax_category)
+        <option value="{{ $tax_category }}">{{ $tax_category }}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Item Tax Category Field -->
@@ -65,7 +73,7 @@
 
 <script>
     function url() {
-    var name = document.getElementById('name').value;
-    url_items.value = name+{{rand(10,99)}};
+        var name = document.getElementById('name').value;
+        url_items.value = name + <?php echo rand(10, 999) ?>
     }
 </script>

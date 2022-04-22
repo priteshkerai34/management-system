@@ -28,3 +28,5 @@ Route::resource('items', App\Http\Controllers\API\itemsAPIController::class);
 Route::resource('tax_categories', App\Http\Controllers\API\tax_categoryAPIController::class);
 
 
+Route::post('register',[App\Http\Controllers\API\ProfileController::class,'register']);
+Route::get('login',[App\Http\Controllers\API\ProfileController::class,'login']);

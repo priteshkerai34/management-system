@@ -34,11 +34,7 @@ class tax_categoryAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $taxCategories = $this->taxCategoryRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
+        $taxCategories = tax_category::get();
 
         return $this->sendResponse($taxCategories->toArray(), 'Tax Categories retrieved successfully');
     }

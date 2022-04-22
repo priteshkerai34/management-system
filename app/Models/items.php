@@ -77,7 +77,14 @@ class items extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'url_items' => 'required',
+        'current_price' => 'required',
+        'Regular_price' => 'required',
+        'available_stock' => 'required',
+        'item_visibility' => 'required',
+        'item_tax_category' => 'required',
+        'category' => 'required'
     ];
 
     public function tax_category()

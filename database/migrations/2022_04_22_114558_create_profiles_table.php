@@ -4,9 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemImagesTable extends Migration
+class CreateProfilesTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,12 +13,13 @@ class CreateItemImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_images', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('images');
-            $table->unsignedbiginteger('item_id');
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->biginteger('number')->unique();
+            $table->string('password');
             $table->timestamps();
-            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateItemImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('item_images');
+        Schema::dropIfExists('profiles');
     }
 }

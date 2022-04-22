@@ -34,11 +34,7 @@ class itemsAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $items = $this->itemsRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
+        $items = items::get();
 
         return $this->sendResponse($items->toArray(), 'Items retrieved successfully');
     }
