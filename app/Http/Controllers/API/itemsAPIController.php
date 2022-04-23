@@ -8,6 +8,8 @@ use App\Models\items;
 use App\Repositories\itemsRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
+use App\Models\category;
+use App\Models\tax_category;
 use Response;
 
 /**
@@ -47,6 +49,16 @@ class itemsAPIController extends AppBaseController
      *
      * @return Response
      */
+    public function category()
+    {
+        $category = category::select('id', 'name')->get();
+        $tax_category = tax_category::select('id', 'name', 'tax_rate')->get();
+        return response()->json([
+            'category' => $category,
+            'tax_category' => $tax_category
+        ]);
+    }
+
     public function store(CreateitemsAPIRequest $request)
     {
         $input = $request->all();

@@ -23,7 +23,7 @@ class itemsFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-        'url_items' => $this->faker->word,
+        'items_url' => $this->faker->word,
         'current_price' => $this->faker->word,
         'Regular_price' => $this->faker->word,
         'available_stock' => $this->faker->randomDigitNotNull,

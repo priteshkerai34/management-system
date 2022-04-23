@@ -13,7 +13,7 @@ use Spatie\Activitylog\LogOptions;
  * @version April 12, 2022, 10:23 am UTC
  *
  * @property string $name
- * @property string $url_items
+ * @property string $items_url
  * @property string $current_price
  * @property string $Regular_price
  * @property integer $available_stock
@@ -33,7 +33,7 @@ class items extends Model
 
     public $fillable = [
         'name',
-        'url_items',
+        'items_url',
         'current_price',
         'Regular_price',
         'available_stock',
@@ -45,7 +45,7 @@ class items extends Model
 
     protected static $logAttributes = [
         'name',
-        'url_items',
+        'items_url',
         'current_price',
         'Regular_price',
         'available_stock',
@@ -62,7 +62,7 @@ class items extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'url_items' => 'string',
+        'items_url' => 'string',
         'current_price' => 'string',
         'Regular_price' => 'string',
         'available_stock' => 'integer',
@@ -78,7 +78,7 @@ class items extends Model
      */
     public static $rules = [
         'name' => 'required',
-        'url_items' => 'required',
+        'items_url' => 'required',
         'current_price' => 'required',
         'Regular_price' => 'required',
         'available_stock' => 'required',

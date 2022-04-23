@@ -3,7 +3,7 @@
     {!! Form::label('category', 'Category:') !!}
     <select class="form-control" id="category" name="category">
         @foreach($category as $category)
-        <option value="{{ $category }}">{{ $category }}</option>
+        <option value="{{ $category }}">{{ $category->name }}</option>
         @endforeach
     </select>
 </div>
@@ -16,8 +16,8 @@
 
 <!-- Url Items Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('url_items', 'Url Items:') !!}
-    {!! Form::text('url_items', null, ['class' => 'form-control']) !!}
+    {!! Form::label('items_url', 'Items Url:') !!}
+    {!! Form::text('items_url', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Current Price Field -->
@@ -43,7 +43,7 @@
     {!! Form::label('item_tax_category', 'Item Tax Category:') !!}
     <select class="form-control" id="item_tax_category" name="item_tax_category">
         @foreach($tax_category as $tax_category)
-        <option value="{{ $tax_category }}">{{ $tax_category }}</option>
+        <option value="{{ $tax_category }}">{{ $tax_category->name }}</option>
         @endforeach
     </select>
 </div>
@@ -74,6 +74,6 @@
 <script>
     function url() {
         var name = document.getElementById('name').value;
-        url_items.value = name + <?php echo rand(10, 999) ?>
+        items_url.value = name + <?php echo rand(10, 999) ?>
     }
 </script>

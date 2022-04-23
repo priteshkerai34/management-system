@@ -16,7 +16,7 @@
             @foreach($items as $items)
             <tr>
                 <td>{{ $items->name }}</td>
-                <td>{{ $items->url_items }}</td>
+                <td>{{ $items->items_url }}</td>
                 <td>{{ $items->current_price }}</td>
                 <td>{{ $items->Regular_price }}</td>
                 <td>{{ $items->available_stock }}</td>

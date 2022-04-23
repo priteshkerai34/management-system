@@ -24,7 +24,7 @@
         "inView": true
     },
     {
-        "name": "url_items",
+        "name": "items_url",
         "dbType": "string",
         "htmlType": "text",
         "validations": "",

@@ -18,7 +18,7 @@ class itemsRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name',
-        'url_items',
+        'items_url',
         'current_price',
         'Regular_price',
         'available_stock',

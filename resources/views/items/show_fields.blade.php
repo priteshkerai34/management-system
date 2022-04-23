@@ -35,7 +35,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $items->url_items }}</div>
+        <div class="col-sm-8">{{ $items->items_url }}</div>
     </div>
 
     <div class="form-group row">
