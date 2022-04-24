@@ -11,7 +11,7 @@ use Spatie\Activitylog\LogOptions;
  * @package App\Models
  * @version April 12, 2022, 7:38 am UTC
  *
- * @property string $Name
+ * @property string $name
  */
 class category extends Model
 {
@@ -20,11 +20,11 @@ class category extends Model
     use LogsActivity;
 
     public $fillable = [
-        'Name'
+        'name'
     ];
 
     protected static $logAttributes = [
-        'Name'
+        'name'
     ];
 
     /**
@@ -33,7 +33,7 @@ class category extends Model
      * @var array
      */
     protected $casts = [
-        'Name' => 'string'
+        'name' => 'string'
     ];
 
     /**
@@ -42,7 +42,7 @@ class category extends Model
      * @var array
      */
     public static $rules = [
-        'Name' => 'required'
+        'name' => 'required'
     ];
 
     public function getActivitylogOptions(): LogOptions

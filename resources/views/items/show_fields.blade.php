@@ -19,7 +19,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $items->category }}</div>
+        <div class="col-sm-8">{{ $items->categories }}</div>
     </div>
 
     <div class="form-group row">
@@ -51,7 +51,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $items->Regular_price }}</div>
+        <div class="col-sm-8">{{ $items->regular_price }}</div>
     </div>
 
     <div class="form-group row">
@@ -84,7 +84,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $items->item_tax_category }}</div>
+        <div class="col-sm-8">{{ $items->tax_category }}</div>
     </div>
 
     <div class="form-group row">

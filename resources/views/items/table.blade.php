@@ -18,10 +18,10 @@
                 <td>{{ $items->name }}</td>
                 <td>{{ $items->items_url }}</td>
                 <td>{{ $items->current_price }}</td>
-                <td>{{ $items->Regular_price }}</td>
+                <td>{{ $items->regular_price }}</td>
                 <td>{{ $items->available_stock }}</td>
                 <td>{{ $items->item_visibility }}</td>
-                <td>{{ $items->item_tax_category  }}</td>
+                <td>{{ $items->tax_category->name }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['items.destroy', $items->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

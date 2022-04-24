@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('items_url');
             $table->decimal('current_price',10,2);
-            $table->decimal('Regular_price',10,2);
+            $table->decimal('regular_price',10,2);
             $table->integer('available_stock');
             $table->longtext('description')->nullable();
             $table->string('item_visibility');

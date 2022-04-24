@@ -19,7 +19,7 @@
         <div class="col-sm-1">
             <i class="fas fa-arrow-right"></i>
         </div>
-        <div class="col-sm-8">{{ $category->Name }}</div>
+        <div class="col-sm-8">{{ $category->name }}</div>
     </div>
 
 </div>

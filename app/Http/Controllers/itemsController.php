@@ -47,8 +47,8 @@ class itemsController extends AppBaseController
      */
     public function create()
     {
-        $category = category::select('id','name')->get();
-        $tax_category = tax_category::select('id','name','tax_rate')->get();
+        $category = category::pluck('name','id');
+        $tax_category = tax_category::pluck('name','id');
         return view('items.create', compact('category', 'tax_category'));
     }
 
@@ -110,8 +110,8 @@ class itemsController extends AppBaseController
     {
         $items = $this->itemsRepository->find($id);
 
-        $category = category::select('id','name')->get();
-        $tax_category = tax_category::select('id','name','tax_rate')->get();
+        $category = category::pluck('name','id');
+        $tax_category = tax_category::pluck('name','id');
 
         if (empty($items)) {
             Flash::error('Items not found');
@@ -140,7 +140,7 @@ class itemsController extends AppBaseController
             return redirect(route('items.index'));
         }
         $input = $request->all();
-        // dd($input);
+        
         $items = $this->itemsRepository->update($input, $id);
 
         Flash::success('Items updated successfully.');

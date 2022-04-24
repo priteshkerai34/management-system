@@ -1,11 +1,8 @@
 <!-- Category Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('category', 'Category:') !!}
-    <select class="form-control" id="category" name="category">
-        @foreach($category as $category)
-        <option value="{{ $category }}">{{ $category->name }}</option>
-        @endforeach
-    </select>
+    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Name Field -->
@@ -28,8 +25,8 @@
 
 <!-- Regular Price Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('Regular_price', 'Regular Price:') !!}
-    {!! Form::number('Regular_price', null, ['class' => 'form-control']) !!}
+    {!! Form::label('regular_price', 'Regular Price:') !!}
+    {!! Form::number('regular_price', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Available Stock Field -->
@@ -41,11 +38,7 @@
 <!-- Item Tax Category Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('item_tax_category', 'Item Tax Category:') !!}
-    <select class="form-control" id="item_tax_category" name="item_tax_category">
-        @foreach($tax_category as $tax_category)
-        <option value="{{ $tax_category }}">{{ $tax_category->name }}</option>
-        @endforeach
-    </select>
+    {!! Form::select('item_tax_category', $tax_category, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Item Tax Category Field -->
